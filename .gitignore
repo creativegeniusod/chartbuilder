@@ -1,0 +1,14 @@
+node_modules/**
+.publish
+build
+!node_modules/stylus-normalize
+.DS_Store
+.idea
+.tmp
+.lvimrc
+npm-debug.log
+bower_components/
+src/fonts
+
+config.json
+.awspublish-*

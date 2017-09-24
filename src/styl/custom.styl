@@ -1,0 +1,867 @@
+#chart-form.app-error .save-button, .em-size, .hidden-svg, .submitted
+  visibility: hidden
+
+#chart-form
+  .label-reset
+    display: block
+  .chartbuilder-main
+    overflow: hidden
+    &.chart-publish > div, &.draft-save > div
+      opacity: 0.1
+    &.chart-publish::before, &.draft-save::before
+      content: ' '
+      background-image: url(/images/spinner.svg)
+      background-repeat: no-repeat
+      width: 30px
+      height: 30px
+      display: inline-block
+      transform-origin: 15px 15px
+      animation: spinner .5s infinite
+      left: 50vw
+      position: fixed
+      top: 45vh
+      background-size: cover
+  .chart-form-group, .chartbuilder-editor
+    box-sizing: border-box
+    overflow: hidden
+    width: 50%
+    padding: 20px
+  .chartbuilder-renderer
+    box-sizing: border-box
+    overflow: hidden
+    width: 50%
+    padding: 20px
+    position: fixed
+    float: left
+    .desktop
+      max-width: 640px
+      margin: 0 auto
+    .mobile
+      max-width: 430px
+      height: 720px
+      .phone-wrap
+        -ms-transform: scale(0.8)
+        -webkit-transform: scale(0.8)
+        transform: scale(0.8)
+      .phone-frame
+        height: 666px
+    .chart-details
+      width: 100%
+      margin-top: 35px
+      .meta, .user-title
+        display: none
+      .user-name
+        margin-left: 6px
+        position: relative
+        top: 7px
+  .chartbuilder-editor
+    float: right
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+  .error-display
+    margin: 0
+    .cb-alert
+      margin-bottom: 6px
+  .input-tags .error-display .cb-alert
+    margin: 6px 0 3px
+  .meta-option
+    &.source + .error-display .cb-alert, &.title + .error-display .cb-alert
+      margin: 6px 0 3px
+  .scale-tangle-inputs + .error-display .cb-alert
+    margin: 6px 0 0
+  .scale-option.cb-text-input + .error-display .cb-alert
+    margin: 0
+  .description-area
+    position: relative
+    .cb-text-label
+      -ms-transform: scale(1) translate3d(0, 0, 0)
+      -webkit-transform: scale(1) translate3d(0, 0, 0)
+      transform: scale(1) translate3d(0, 0, 0)
+      -webkit-transform-origin: left top
+      -ms-transform-origin: left top
+      transform-origin: left top
+      -webkit-transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0s
+      transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0s
+      position: absolute
+      top: 21px
+      left: 10px
+      font-size: 1.4em
+      color: #a1a1a1
+      opacity: 1
+      pointer-events: none
+      z-index: 2
+    &.focused .cb-text-label
+      -ms-transform: scale(0.8) translate3d(0, -11px, 0)
+      -webkit-transform: scale(0.8) translate3d(0, -11px, 0)
+      transform: scale(0.8) translate3d(0, -11px, 0)
+    &:after
+      content: '**bold** _italic_ [hyperlink](http://url.com)'
+      display: block
+      text-align: right
+      position: relative
+      top: -8px
+      color: #BEBEBE
+  form + .error-div
+    top: -100px
+    left: calc(50% + 50px)
+    width: 43.2%
+    background-color: #e55151
+    position: relative
+    color: #FFF
+    padding: 15px 0
+    .cb-alert span
+      border: 0
+      &:before
+        content: '\e901'
+        font-size: 20px
+        margin-top: 10px
+        margin-left: 10px
+    .cb-alert-text
+      text-indent: 5px
+      padding-left: 40px !important
+      font-size: 16px
+    .cb-alert + a
+      margin-left: 45px
+      font-size: 16px
+      + span
+        font-size: 16px
+  &.app-error .advanced-options
+    display: none
+  .cb-toggle:not(.toggled) .cb-toggle-container
+    background-color: #E2E2E2
+
+.chart-form-group
+  float: right
+  input
+    display: block
+
+#chart-form
+  .chartbuilder-editor .hidden, .chartbuilder-renderer .tags, form .errors
+    display: none
+
+span.step-number
+  line-height: 1.6em
+
+#chart-form
+  .chartbuilder-renderer
+    padding: 20px 50px 20px 40px
+    .svg-chart-renderer
+      width: 100%
+  form > .chart-form-group
+    width: calc(50% - 67px)
+    margin-right: 36px
+    &:last-child
+      padding-top: 0
+      margin-top: -30px
+  .cb-button-group .cb-button
+    color: #333
+    &:hover
+      color: #AB5787
+    &.active
+      color: #A1A1A1
+      &:hover
+        color: #A1A1A1
+  .cb-dropdown select
+    height: 55px
+    border-radius: 0
+    margin-bottom: 5px
+  .cb-button
+    &.btn-primary
+      margin-top: 20px
+      background-color: #AB5787
+      color: #FFF
+      font-size: 16px
+      line-height: 20px
+      width: 30%
+    &.load-localstorage
+      position: relative
+      top: -9em
+      float: right
+      border: 0
+      color: #BEBEBE
+      &:hover
+        background: 0 0
+        color: #AB5787
+  .cb-text-input label
+    color: #A1A1A1
+  .chart-type-select .cb-button-group .cb-button.active:hover
+    color: inherit
+  .editor-options
+    font-family: AdelleSans-Regular, sans-serif
+    margin: 28px 0
+    &:first-of-type > h4
+      white-space: nowrap
+    .editor-option .editor-label
+      font-family: AdelleSans-Regular, sans-serif
+      font-size: 16px
+    .data-input
+      line-height: 0
+      margin-top: 3px
+      .clear-data
+        position: absolute
+        right: 0
+        margin-top: -6em
+        font: 16px/20px AdelleSans-Regular, sans-serif
+        color: #AB5787
+        cursor: pointer
+  .cb-labelled-tangle .editor-label, .chartgrid-editor .grid-options .editor-option .editor-label
+    font-family: AdelleSans-Bold, "Helvetica Neue", sans-serif
+  .editor-options
+    .data-input
+      .clear-data:hover
+        color: #BEBEBE
+      h3
+        margin: 0 0 10px
+        font-size: 16px
+        line-height: 20px
+      .datatypesection
+        line-height: normal
+        padding-top: 13px
+      label + textarea
+        line-height: normal
+        width: calc(100% - 15px)
+        padding: 35px 0 15px 15px
+        resize: vertical
+    .cb-button.btn-primary
+      margin-top: 0
+    .cb-text-area
+      line-height: normal
+      margin-bottom: 6px
+      &.chart-form-description
+        font-size: 1.4em
+        margin: 5px 0
+        padding: 0
+        &::-webkit-input-placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder
+          color: #a1a1a1
+        textarea
+          padding-left: 10px
+          font-size: 1em
+    .character-count
+      position: absolute
+      right: 65px
+      z-index: 2
+      margin-top: 10px
+      color: #A1A1A1
+      &.warn
+        color: #e55151
+    .cb-text-input.organization .cb-dropdown
+      border: 1px solid #e2e2e2
+      padding: 0
+      height: 55px
+      margin: 3px 0 -5px
+      overflow: hidden
+      background-color: #fff
+      select
+        border: none
+        border-radius: 0
+        margin: 10px 0 0 10px
+        position: absolute
+        width: calc(100% - 2px)
+        -webkit-appearance: none
+        -moz-appearance: none
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAuCAYAAABJcBuEAAAC1ElEQVRYR+2XT2gTQRTG56UqVLdaokIXDUF715pu8VQ8iYcEtteA1VO6G3tN8WQJ4kXdgjd3m3rwz2FOpZCNeNAsHswhwUg92nqRUqvYNmJQoZonIwlETbIz3dWCZK/75n2/+WbezBsgO/zBDuuTLkDXgf/DAUTcs7KyMh4Khe6IVpUvDjiOc3NmZiaVzWYPA8AHEQjPAJVK5biqqq+r1SpJJBLPNE0bBQDkhfAEgIgBwzBeUUoHG4K2bUdlWX74TwBKpZKm67rZLDY8PLxlWVY/AHzmgdi2A4gYjMfj60tLS3/oTE9PP1BVdfyvASAiWJb1NJPJjLYSkSSJ5HK5k5IkvXSD2JYDq6ur5+Lx+CO28dp9sVhsLZ1OHwWA750ghAEQsXdiYuJjuVze7TY7y7IuKYpy21eAfD5/d2pq6oKbOPsvyzLJZrP7AeBTu3ghB6rV6oloNLrYyfrfhRKJhKnretIzACLuMgzjLaX0EM/sm2MWFhYOhkKhjVbjuB0oFArBycnJUz09PfsQUQKAPkTsI4QcQMT+QCDQX6vVmN297G5gYgDwlRCyoSjKdcuyFj0BiM6aN57bAd6EonFdgK4D3A4Ui8WryWTyissm2yKEsNJjJ986IWSNEPImEok8zmQy1FMZ1g+id5TSoOhOn5+fV8Lh8HNPAGzw5ubm0NjY2AvBo/iJpmln27Vp3EvQoHcc534qlTrP48LAwACxbbtjoyoMIHIdm6Z5eWRk5Iav1zFLxtmQvE+n00cA4JvvAKwlM03TmZubO9OhJRuSJKnlBdQ8RngJGoNdmtJ7qqpe5Nkn2wZgyVu15ZFI5Mvs7GywfhW7MngCqD9MlimlxxpKtm2flmW56KpcD/AEwHJUKpVBVVWX60+za7quu52Wv7B5BmDZHMe5ZRjGXtu2dQCo8c7+Z9ckEtwullWFyIPUlyrwA9w3B7zA+LIEXYCuA14c+AHIJBg+j0MkiAAAAABJRU5ErkJggg==") no-repeat
+        background-size: auto 21px
+        background-position: calc(100% - 18px) center
+        &:disabled
+          color: #cacaca
+  .chartbuilder-editor
+    padding: 20px 54px 20px 50px
+    > .editor-options:first-of-type
+      margin-top: -2.2em
+      margin-bottom: 15px
+  .cb-labelled-tangle .cb-tangle
+    text-indent: 8px
+    padding-bottom: 0
+    padding-top: 14px
+    outline: 0
+  .data-input
+    border: 0
+  textarea.data-input
+    border: 1px solid #E2E2E2
+  .xy-editor
+    h2 + .cb-button.label-reset
+      position: absolute
+      right: 45px
+      margin-top: -4em
+      line-height: 5px
+      color: #AB5787
+      border: 0
+      &:hover
+        background-color: inherit
+        color: #BEBEBE
+    .series-label
+      width: 56px
+      text-align: center
+      white-space: nowrap
+    .typesection
+      margin-right: 6px
+      margin-top: 10px
+    .axissection .cb-button-group
+      margin-right: 0
+    + .editor-options
+      .cb-button-group:last-child
+        margin-top: 3px
+      .cb-text-input input
+        width: 100%
+    .datatypesection h3
+      font-size: 16px
+      margin-bottom: 15px
+  .series-control
+    margin: 0 0 25px
+    .series-label-input input
+      background-color: #FFF
+      &:focus, &:hover
+        padding: 21px 10px 0
+    .axis-color
+      -ms-transform: none
+      -webkit-transform: none
+      transform: none
+      position: relative
+      left: 2%
+      label
+        color: #333
+        font-weight: 400
+        white-space: nowrap
+  .cb-colorpicker-els
+    width: 7.6vw
+    top: -64px
+    left: 53px
+    background-color: #FFF
+    min-width: 110px
+    max-width: 150px
+    &.active
+      border: 1px solid #E2E2E2
+      .cb-colorpicker-el
+        margin: 10px 5px 0 10px
+        border-radius: 2px
+        &:nth-of-type(2n)
+          margin: 10px 10px 0 5px
+        &:last-of-type
+          margin-bottom: 10px
+          margin-right: 10px
+      &:after
+        top: 26%
+        border-right-color: #E2E2E2
+  .chartgrid-editor
+    h2
+      width: 75%
+      float: left
+      + .cb-button
+        float: right
+        border: none
+        position: absolute
+        right: 45px
+        margin-top: -4em
+        width: auto
+        &:hover
+          background: 0 0
+          color: #AB5787
+    .cb-button.universal-toggle
+      color: #AB5787
+      &:hover
+        color: #BEBEBE
+    .colorsection label
+      color: #333
+      font-weight: 400
+    .editor-options:first-of-type h2
+      width: 100%
+      float: none
+    .grid-options
+      display: -ms-flexbox
+      display: -webkit-flex
+      display: flex
+      -webkit-flex-direction: row
+      flex-flow: row wrap
+      width: 98%
+      .editor-option
+        margin-right: 10px
+        width: calc(50% - 10px)
+        float: left
+      .button-group-wrapper:last-of-type
+        margin-right: 0
+      .editor-option
+        &:last-of-type
+          margin-right: 0
+        &:first-of-type
+          -webkit-flex-shrink: 1
+          -ms-flex-shrink: 1
+          flex-shrink: 1
+          width: 100%
+        .editor-label
+          text-indent: -1ch
+      .cb-button-group
+        -webkit-flex-wrap: nowrap
+        flex-wrap: nowrap
+      .button-group-wrapper
+        -webkit-flex: auto
+        flex: auto
+    .scale-options h2, + .editor-options .cb-text-input input
+      width: 100%
+  .cb-text-input
+    margin-right: 0
+    text-align: left
+    input
+      margin: 3px 0 0
+    &.meta-option
+      width: 100%
+      input
+        width: 100%
+    &.scale-option
+      width: 100%
+      overflow: hidden
+      input
+        width: 100%
+  .scale-options
+    h2
+      text-align: left
+      font-size: 16px
+    .scale-tangle-inputs
+      text-align: left
+      border: 0
+      margin: 0
+      display: flex
+      flex-flow: row wrap
+      width: auto
+      .cb-labelled-tangle
+        padding: 0
+        width: 49%
+        height: auto
+        display: block
+        &:first-of-type
+          padding-left: 0
+        &:nth-of-type(4n-1)
+          padding-left: 12px
+        label
+          line-height: 20px
+          position: absolute
+          font-weight: 400
+          font-family: AdelleSans-Regular, sans-serif
+          color: #A1A1A1
+          font-size: 13px
+          margin: 12px 0 0 16px
+        div
+          width: calc(100% - 24px)
+      .cb-button.label-reset
+        display: table-cell
+        width: 13ch
+        position: relative
+        line-height: 20px
+        margin-left: 20px
+        top: 38px
+        padding: 0
+      + .cb-button
+        margin-top: 8px
+        margin-right: -2px
+    .labelled-dropdown
+      label
+        position: absolute
+        font-size: 13px
+        color: #A1A1A1
+        margin-left: 45px
+        margin-top: 9px
+      &.time-appearance label
+        position: static
+        display: inline-block
+        margin-left: 0
+        margin-bottom: 12px
+        width: 100%
+    .cb-dropdown:before
+      content: '\e602'
+      font-family: atlas-icons
+      display: block
+      float: left
+      position: absolute
+      margin-top: 25px
+      margin-left: 20px
+      color: #BEBEBE
+    .cb-dropdown-select
+      background-color: #F1F1F1
+      -webkit-appearance: none
+      -moz-appearance: none
+      appearance: none
+      padding: 5px
+      text-indent: 40px
+      line-height: 55px
+    .scale-option.cb-text-input
+      display: block
+      margin: 0 0 6px
+      input
+        margin: 0
+  .cb-tangle
+    width: 100%
+    margin-left: 0
+    text-align: left
+    padding: 7px
+    margin-top: 4px
+    height: 55px
+  .cb-button-group, .chart-type-select
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: flex
+    -webkit-flex-direction: row
+    flex-direction: row
+  .cb-button-group .cb-button, .chart-type-select .cb-button
+    -webkit-flex: auto
+    flex: auto
+  .cb-button-group .cb-button
+    padding: 0 10px
+  .cb-button
+    font-size: 16px
+    line-height: 20px
+  h2 span:not(.step-number)
+    font-size: 36px
+    line-height: 42px
+  .step-number
+    color: #333
+    border-radius: 0
+    background: 0 0
+    font-size: 36px
+    line-height: 54px
+    width: auto
+    height: 1em
+    &:after
+      content: "."
+  .mobile-option input
+    width: 100%
+  .chartbuilder-renderer
+    overflow: scroll
+    height: 100vh
+    border-right: 1px solid #E2E2E2
+  .cb-button
+    &.save-button
+      background-color: #AB5787
+      color: #FFF
+      opacity: .88
+      padding: 0 10px
+      display: inline-flex
+      width: calc(50% - 3px)
+      margin-right: 10px
+      justify-content: center
+      &.active
+        opacity: 1
+        &:hover
+          background-color: #703c5d
+      &:disabled
+        background-color: #E2E2E2
+    &.save-draft-button
+      background-color: none
+      color: #000
+      position: relative
+      padding: 0 10px
+      display: inline-flex
+      justify-content: center
+      width: calc(50% - 17px)
+      top: -7px
+      white-space: nowrap
+  .advanced-options.hidden + .export-button-wrapper .link-delete
+    display: none
+
+.sponsor-error .cb-text-input
+  display: none
+
+#chart-form
+  .cb-button.save-draft-button
+    &:hover
+      color: #FFF
+      background-color: #E2E2E2
+    &.disabled
+      opacity: .3
+      cursor: default
+      &:hover
+        background: 0 0
+        color: #000
+  .requiredCallToAction
+    clear: left
+  .advanced-options
+    .export-button-wrapper
+      width: 100%
+      float: left
+      margin-bottom: 10px
+      button:nth-of-type(2)
+        margin: 0 10px
+    + .export-button-wrapper .link-delete
+      position: relative
+      top: 12px
+
+.toggle-advanced
+  color: #AB5787
+  font-size: 16px
+  line-height: 24px
+  font-family: AdelleSans-Regular, sans-serif
+  display: inline-block
+  width: auto
+  font-weight: 400
+  float: none
+  position: absolute
+  right: 55px
+  top: auto
+  margin-top: -3em !important
+
+.chartbuilder-editor > .editor-options:nth-last-of-type(3) div input
+  width: 100%
+
+.toggle-advanced:hover
+  color: #BEBEBE
+
+.errors
+  position: relative
+  left: calc(50% + 50px)
+  top: -15px
+  .label-danger
+    font-size: 16px
+    line-height: 23px
+    color: #e55151
+
+@media screen and (max-width: 1100px)
+  #chart-form .xy-editor h2 + .cb-button.label-reset
+    font-size: 14px
+    margin-top: -5em
+    padding: 4px
+    height: 51px
+    line-height: 17px
+    width: 9ch
+
+.chartbuilder-renderer .mobile
+  max-width: 429px
+  height: 1000px
+  margin-left: auto
+  margin-right: auto
+  margin-top: 4em
+  position: relative
+  .phone-frame
+    overflow-y: scroll
+    position: relative
+    height: 669px
+    width: 372px
+    top: 116px
+    left: 29px
+  .phone-img
+    position: absolute
+    top: 0
+    left: 0
+    z-index: -1
+    pointer-events: none
+
+@media screen and (max-width: 1400px)
+  #chart-form
+    .chartbuilder-renderer
+      width: 700px
+      top: 25px
+      padding-top: 75px
+      .desktop
+        min-width: 640px
+    .chartbuilder-editor
+      float: none
+      margin-left: 720px
+      width: auto
+      padding: 20px 44px 20px 40px
+    .xy-editor h2 + .cb-button.label-reset
+      right: 2.72vw
+    .series-control
+      .series-label-input
+        width: 67%
+      .axissection .cb-toggle label
+        white-space: nowrap
+
+@media screen and (min-width: 1100px) and (max-width: 1300px)
+  #chart-form
+    .xy-editor h2 + .cb-button.label-reset
+      position: relative
+      right: 0
+      float: right
+      left: 10px
+    .chartbuilder-editor
+      padding: 20px 44px 20px 20px
+
+@media screen and (max-width: 1420px)
+  #chart-form .scale-options .scale-tangle-inputs .cb-labelled-tangle
+    width: 48%
+
+@media screen and (max-width: 1300px)
+  #chart-form .scale-options .scale-tangle-inputs
+    display: flex
+    justify-content: flex-start
+    flex-direction: row
+    flex-wrap: wrap
+    .cb-labelled-tangle
+      display: block
+    .cb-button.label-reset
+      flex-grow: 1
+      flex-basis: 21%
+      margin-left: 0
+      position: static
+      margin-top: 65px
+
+@media screen and (max-width: 1260px)
+  #chart-form .chartgrid-editor .editor-options:first-of-type h2
+    width: 75%
+
+@media screen and (max-width: 1230px)
+  #chart-form .editor-options .toggle-advanced
+    float: none
+    position: static
+
+@media screen and (max-width: 1150px)
+  #chart-form .scale-options .scale-tangle-inputs .cb-labelled-tangle
+    flex-basis: 14.1%
+
+@media screen and (max-width: 1149px)
+  #chart-form .scale-options .scale-tangle-inputs
+    .cb-labelled-tangle
+      flex-basis: 200px
+      flex-grow: 1
+      margin-bottom: 65px
+      padding-left: 0 !important
+      label
+        display: block
+      div
+        width: 97%
+    .cb-button.label-reset
+      flex-basis: 200px
+      margin-top: 0
+
+@-moz-document regexp('.*')
+  #chart-form
+    select:-moz-focusring
+      color: transparent
+      text-shadow: 0 0 0 #000
+      option
+        text-shadow: none
+        color: #000
+        &:not(:checked)
+          color: #000 !important
+    .scale-options
+      .cb-dropdown-select
+        text-indent: 17px
+        line-height: initial
+      .labelled-dropdown label
+        -moz-transform: translateY(-40px)
+    .editor-options .cb-text-input.organization .cb-dropdown select
+      margin-left: 5px
+
+
+#chart-form
+  .scale-options
+    select::-ms-expand
+      display: none
+    .labelled-dropdown label
+      -ms-transform: translateY(-40px) translateX(-36px)
+    .cb-dropdown::before
+      -ms-transform: translateX(35vw)
+
+@supports (-ms-ime-align: auto)
+  #chart-form
+    .cb-button-group .cb-button, .cb-button.save-button, .chartbuilder-editor > div, .clear-data, .series-control .axis-color label, h2, h3, h4
+      transform: rotate(0.01deg)
+    .scale-options .labelled-dropdown label
+      transform: translateY(-40px) translateX(-36px)
+  .cb-dropdown::before
+    transform: translateX(35vw)
+
+_::-webkit-full-page-media
+  padding-left: 4px
+
+#chart-form .scale-options-date .cb-dropdown-select, _::-webkit-full-page-media
+  text-indent: 32px
+
+#chart-form .cb-button
+  &.save-button, &.save-draft-button
+    display: -webkit-inline-box
+
+_::-webkit-full-page-media
+  display: -webkit-inline-box
+
+.editor-options .scale-options h4 + .label-reset, .new-chart-support-link a
+  color: #AB5787
+
+.editor-options
+  h2
+    margin-bottom: 13px
+  h4
+    font-size: 16px
+    line-height: 20px
+    margin: 0
+    text-align: left
+  .scale-options h4
+    &:nth-of-type(2)
+      padding-top: 19px
+      padding-bottom: 2px
+    + .label-reset:hover
+      color: #BEBEBE
+      background: 0 0
+  h4 + .label-reset
+    padding: 0
+    height: 1em
+    border: none
+    width: auto
+    display: inline-block
+    float: right
+    margin-top: -23px
+  .helptext
+    font: 13px/19px AdelleSans-Regular, sans-serif
+    color: #A1A1A1
+    text-align: left
+    display: inline-block
+    margin-bottom: 5px
+  &.mobile-overrides
+    >
+      h2:first-child
+        font-family: AdelleSans-Bold, "Helvetica Neue", sans-serif
+      .helptext
+        margin-top: -10px
+        margin-bottom: 12px
+    &.chartgrid-mobile > .helptext
+      margin-top: 0
+    .scale-options
+      margin-top: 24px
+    .scale-option-title + h4
+      display: none
+
+#chart-form .mobile-overrides .scale-option-title
+  margin-bottom: 4px
+
+span.step-number
+  background-color: #333
+  border-radius: 100px
+  color: #fff
+  width: 1.5em
+  height: 1.5em
+  display: inline-block
+  text-align: center
+  margin-right: 0.25em
+
+.editor-options
+  font-family: AdelleSans-Regular, 'Helvetica Neue', Arial, Helvetica, sans-serif
+  margin: 30px 0
+  display: block
+  width: 100%
+  .editor-option
+    margin-bottom: 12px
+
+.downarrow
+  width: 28px
+  height: 26px
+  position: absolute
+  background-color: #f1f1f1
+  border: 1px solid #e2e2e2
+  text-align: center
+  line-height: 26px
+  font-size: 9px
+  cursor: pointer
+
+.uparrow
+  width: 28px
+  height: 26px
+  position: absolute
+  background-color: #f1f1f1
+  border: 1px solid #e2e2e2
+  text-align: center
+  line-height: 26px
+  font-size: 9px
+  cursor: pointer
+  margin-top: 4px
+  margin-left: -38px
+
+.downarrow
+  margin-top: 31px
+  margin-left: -38px
