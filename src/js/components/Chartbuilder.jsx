@@ -266,7 +266,19 @@ var Chartbuilder = React.createClass({
 		    }
 		}
 		
-		saveDraftButton = (<SaveButton
+		return isEqual(this.state.chartProps, this.initialState.chartProps) && isEqual(this.state.metadata, this.initialState.metadata) && (status = false), window && window.initialMobileChartState && (isEqual(this.state.chartProps.mobile, window.initialMobileChartState) || (status = true)), window && (window.atlasFormDataChanged = status), React.createElement(SaveButton, {
+			onSave: this._doSave,
+			model: this.state,
+			generateMobileImage: this.props.showMobilePreview,
+			desktopClass: "renderer-svg-desktop",
+			mobileClass: "renderer-svg-mobile",
+			disabled: isInvalid || !status,
+			active: !isInvalid && status,
+			isDraft: true,
+			onDraftSave: this._handleDraftClick,
+			isPublishedChart: this.props.isPublishedChart
+		});
+		/*saveDraftButton = (<SaveButton
 			onSave={this._doSave}
 			model={this.state}
 			generateMobileImage={this.props.showMobilePreview}
@@ -279,7 +291,7 @@ var Chartbuilder = React.createClass({
 			isPublishedChart={this.props.isPublishedChart}
 		/> );
 		
-		return saveDraftButton;
+		return saveDraftButton;*/
 	},
 	
 	_handleDraftClick: function() {

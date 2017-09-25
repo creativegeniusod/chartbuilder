@@ -158,17 +158,6 @@ var ChartGridEditor = React.createClass({
 			<div className="chartgrid-editor">
 				<div className="editor-options">
 					<h2>
-						<span className="step-number">2</span>
-						<span>Input your data</span>
-					</h2>
-					<DataInput
-						errors={inputErrors}
-						chartProps={chartProps}
-						className="data-input"
-					/>
-				</div>
-				<div className="editor-options">
-					<h2>
 						<span className="step-number">3</span>
 						<span>Set series options</span>
 					</h2>

@@ -76,17 +76,26 @@ var ChartGridMobile = React.createClass({
 		);
 
 		return (
-			<div className="editor-options mobile-overrides">
+			<div className="editor-options mobile-overrides chartgrid-mobile">
 				<h2>
-					<span className="step-number">✭</span>
+					<span className="step-number">{this.props.stepNumber}</span>
 					Mobile settings
 				</h2>
+				<span className="helptext">
+					Be sure to check that your chart is rendering correctly at smaller sizes. Scroll the left side of the page to preview the mobile chart size.
+				</span>
 				<TextInput
 					value={chartProps.mobile.title}
 					className="mobile-option"
 					onChange={this._handleUpdate.bind(null, "title")}
 					placeholder={"Mobile-specific title"}
 				/>
+				<h4>Y-axis • label data</h4>
+				
+				<span className="helptext">
+				    {'Use the prefix and suffix to label the units of the axis. For example, in "$50 million", "$" is the prefix and "million" is the suffix.'}
+				</span>
+				
 				{scaleSettings}
 			</div>
 		);
