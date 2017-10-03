@@ -131,13 +131,13 @@ function cast_data(input, columnNames, stripCharsRegex, opts) {
 
 	var index_types = unique(all_index_types);
 
-	if(index_types.length !== 1 && !opts.type) {
+	/*if(index_types.length !== 1 && !opts.type) {
 
 	}
 	else {
 		hasDate = opts.type ? opts.type == "date" : index_types[0] === "date";
 		isNumeric = opts.type ? opts.type == "numeric" : index_types[0] === "number";
-	}
+	}*/
 
 	return {
 		data: data,

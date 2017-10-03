@@ -10,7 +10,8 @@ var ChartbuilderLocalStorageAPI = require("./util/ChartbuilderLocalStorageAPI");
 var Chartbuilder = require("./components/Chartbuilder.jsx");
 var ChartForm = require("./components/ChartForm.jsx");
 
-var container = document.querySelector(".chartbuilder-container");
+//var container = document.querySelector(".chartbuilder-container");
+var container = document.getElementById('app');
 
 document.addEventListener("DOMContentLoaded", function() {
 	document.cookie = "authed=yes";

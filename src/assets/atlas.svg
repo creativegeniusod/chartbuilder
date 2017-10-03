@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="25px" height="25px" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>qz-icons</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="qz-icons" sketch:type="MSArtboardGroup" fill="#f1f1f1">
+            <g id="i.atlas" sketch:type="MSLayerGroup" transform="translate(1.000000, 1.000000)">
+                <path d="M12,0 L10,0 L0,20 L2,20 L11,2 L20,20 L22,20 L12,0 Z M11,22.0026413 L11,20.0042921 L0,20.0042921 L1,22 L11,22.0026413 Z" id="Shape" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="21px" viewBox="0 0 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Spinner</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Admin" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="org_admin_users_searching" transform="translate(-292.000000, -119.000000)">
+            <g id="Header-area" transform="translate(0.000000, 7.000000)">
+                <g id="Group-2">
+                    <g id="search-users" transform="translate(25.000000, 94.000000)">
+                        <g id="top">
+                            <g id="input.prefix">
+                                <g id="Spinner" transform="translate(268.000000, 19.000000)">
+                                    <path d="M9.5,20 C15.2989899,20 20,15.2989899 20,9.5 C20,3.70101013 15.2989899,-1 9.5,-1 C3.70101013,-1 -1,3.70101013 -1,9.5 C-1,15.2989899 3.70101013,20 9.5,20 Z M9.5,18 C4.80557963,18 1,14.1944204 1,9.5 C1,4.80557963 4.80557963,1 9.5,1 C14.1944204,1 18,4.80557963 18,9.5 C18,14.1944204 14.1944204,18 9.5,18 Z" id="Oval-2" fill="#E2E2E2"></path>
+                                    <path d="M9.5,20 C15.2989899,20 20,15.2989899 20,9.5 L18,9.5 C18,14.1944204 14.1944204,18 9.5,18 L9.5,20 Z" id="Oval-2" fill="#AB5787"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -195,6 +195,7 @@ var Chartbuilder = React.createClass({
 	},
 	
 	_renderChartDetailPreview: function() {
+		var cp;
 		if (cp = this.props.additionalComponents.chartDetailPreview, !cp) return null;
 		var e, t = this.state.metadata.tags;
 		return e = t.length > 0 && "object" == typeof t ? t.join(", ") : t, React.cloneElement(cp, {
