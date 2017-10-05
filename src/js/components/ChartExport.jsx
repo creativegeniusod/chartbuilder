@@ -101,11 +101,13 @@ var ChartExport = React.createClass({
 	},
 
 	downloadPNG: function() {
+		console.log(this.state.chartNode);
 		filename = this._makeFilename("png");
 		saveSvgAsPng.saveSvgAsPng(this.state.chartNode, filename, { scale: 2.0 });
 	},
 
 	_autoClickDownload: function(filename, href) {
+		console.log(href);
 		var a = document.createElement('a');
 		a.download = filename;
 		a.href = href;

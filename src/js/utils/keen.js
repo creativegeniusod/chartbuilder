@@ -1,6 +1,6 @@
 var r = (process.env.NODE_ENV || "development", require("lodash/assign"), require("js-cookie"));
 
-KeenClient = require("keen-js");
+var KeenClient = require("keen-js");
 
 var keen = {
 	_hasBeenInitialized: !1,

@@ -20,6 +20,8 @@ module.exports = {
 		return e.dispatch("CREATE_CHART_START"), e.agent.post("/api/charts").send({
 			chart: t.chart
 		}).promise().done(function(n) {
+			console.log('Harish');
+			console.log(n.body);
 			e.dispatch("CREATE_CHART", n.body), e.executeAction(r, {
 				chartId: n.body.chart._id,
 				images: t.images,

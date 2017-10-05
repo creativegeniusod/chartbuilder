@@ -5,7 +5,8 @@
 'use strict';
 require('babel-core/register')({
     presets: ['es2015', 'react'],
-    extensions: [".es6", ".es", ".jsx", ".js"],
+    extensions: [".jsx", ".js"],
+    plugins: ['transform-class-properties'],
     ignore:  /node_modules\/(?!(chartbuilder-ui|react-tangle)\/).*/
 })
 

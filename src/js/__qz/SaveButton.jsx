@@ -7,8 +7,8 @@ var React = require("react");
 var Button = require("chartbuilder-ui").Button;
 
 var PropTypes = React.PropTypes;
-//var saveSvgAsPng = require("save-svg-as-png");
-var saveSvgAsPng = require("../util/save-svg-as-png");
+var saveSvgAsPng = require("save-svg-as-png");
+//var saveSvgAsPng = require("../util/save-svg-as-png");
 var each = require("lodash/each");
 
 var SaveButton = React.createClass({
@@ -79,24 +79,37 @@ var SaveButton = React.createClass({
 				s = "desktop" === a.size ? desktopChart : mobileChart;
 				var c = s.querySelectorAll('tspan[data-reactid*="Footer"]')[0];
 				c && c.setAttribute("dy", "0.28em");
-				var u = s.cloneNode(!0);
+				var u = s.cloneNode(true);
+				console.log(u);
 				var l = u.querySelectorAll(".svg-text-title");
 				var p = u.querySelectorAll(".svg-credit-data");
 				
-				l.length > 0 && l[0].parentNode.removeChild(l[0]), p.length > 0 && p[0].parentNode.removeChild(p[0]), saveSvgAsPng.svgAsRaw(s, {
-					scale: a.scale
+				l.length > 0 && l[0].parentNode.removeChild(l[0]), p.length > 0 && p[0].parentNode.removeChild(p[0]), saveSvgAsPng.svgAsDataUri(s, {
+					scale: a.scale,
+					cleanFontDefs: true,
+					fontFamilyRemap: {
+						"Khula-Light": "Khula Light",
+						"Khula-Regular": "Khula",
+					}
 				}, function(e) {
-					var t = e.slice(26);
-					t = t.replace("xml version", 'xml encoding="UTF-8" version'), i[a.name] = t, Object.keys(i).length === 2 * r._pngScales.length && r.setState({
+					//var t = e.slice(26);
+					var t = e;
+					i[a.name] = t, Object.keys(i).length === 2 * r._pngScales.length && r.setState({
 						isSaving: !1
 					}, function() {
 						r._prepareModel(i, ratio)
 					})
-				}), saveSvgAsPng.svgAsRaw(u, {
-					scale: a.scale
+				}), saveSvgAsPng.svgAsDataUri(u, {
+					scale: a.scale,
+					cleanFontDefs: true,
+					fontFamilyRemap: {
+						"Khula-Light": "Khula Light",
+						"Khula-Regular": "Khula",
+					}
 				}, function(e) {
-					var t = e.slice(26);
-					t = t.replace("xml version", 'xml encoding="UTF-8" version'), i["__" + a.name + "__"] = t, Object.keys(i).length === 2 * r._pngScales.length && r.setState({
+					//var t = e.slice(26);
+					var t = e;
+					i["__" + a.name + "__"] = t, Object.keys(i).length === 2 * r._pngScales.length && r.setState({
 						isSaving: !1
 					}, function() {
 						r._prepareModel(i, ratio)

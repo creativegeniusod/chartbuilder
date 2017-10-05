@@ -15,7 +15,7 @@ module.exports = function(e) {
 				dehydrate: function() {
 					return {
 						headers: {
-							"csrf-token": t["csrf-token"]
+							"csrfToken": t["csrfToken"]
 						}
 					}
 				},

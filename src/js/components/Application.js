@@ -13,7 +13,8 @@ var Application = React.createClass({
 
     contextTypes: {
         getStore: React.PropTypes.func,
-        executeAction: React.PropTypes.func
+        executeAction: React.PropTypes.func,
+        router: React.PropTypes.func
     },
     
     mixins: [Router.State, Router.Navigation, FluxibleMixin],

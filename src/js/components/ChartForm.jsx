@@ -9,11 +9,12 @@ var isString = require("lodash/isString");
 var isEmpty= require("lodash/isEmpty");
 var filter = require("lodash/filter");
 var d = "undefined" != typeof window;
-//var FluxibleMixin = require("fluxible-addons-react/FluxibleMixin");
+var FluxibleMixin = require("fluxible-addons-react/FluxibleMixin");
 
 var ChartActions = require("../actions/ChartActions");
 var ChartFormActions = require("../actions/ChartFormActions");
 var ChartStyles = require("./ChartStyles.jsx");
+var validation = require("../helpers/validation");
             
 var Description = require("./chartFields/Description.jsx");
 var Tags = require("./chartFields/Tags.jsx");
@@ -23,17 +24,20 @@ var ToggleFields = require("./chartFields/ToggleFields.jsx");
 //var SponsorFields = require("./chartFields/SponsorFields.jsx");
 var AuthStore = require("../stores/AuthStore");
 var ChartStore = require("../stores/ChartStore");
-var Chartbuilder = require("./Chartbuilder.jsx");
+
+if(d) {
+	var Chartbuilder = require("./Chartbuilder.jsx");
+}
 
 var ChartForm = React.createClass({
 
-	//mixins: [FluxibleMixin],
+	mixins: [ReactRouter.Navigation,FluxibleMixin],
 	
-	statics: {
+	/*statics: {
 		storeListeners: {
 			onAuthStoreChange: [AuthStore]
 		}
-    },
+    },*/
     
     getInitialState: function() {
 		var chartId = this.props.chart && this.props.chart._id;
@@ -44,38 +48,34 @@ var ChartForm = React.createClass({
 		}
 	},
 	
-	onAuthStoreChange: function() {
-		var e = this.getStore(AuthStore);
-		if (u(e.user)) return this.replaceWith("index")
-	},
-	
 	getToggleFieldDefaults: function() {
-		var e = this.props.chart,
-			t = {
-				dataDownloadable: "undefined" == typeof(e && e.dataDownloadable) || e.dataDownloadable,
-				embeddable: "undefined" == typeof(e && e.embeddable) || e.embeddable,
-				imageDownloadable: "undefined" == typeof(e && e.imageDownloadable) || e.imageDownloadable,
-				inFeeds: "undefined" == typeof(e && e.inFeeds) || e.inFeeds
+		var chart = this.props.chart;
+		
+		var	toggleField = {
+				dataDownloadable: "undefined" == typeof(chart && chart.dataDownloadable) || chart.dataDownloadable,
+				embeddable: "undefined" == typeof(chart && chart.embeddable) || chart.embeddable,
+				imageDownloadable: "undefined" == typeof(chart && chart.imageDownloadable) || chart.imageDownloadable,
+				inFeeds: "undefined" == typeof(chart && chart.inFeeds) || chart.inFeeds
 			},
-			n = function(e) {
-				return t[e] === !0 ? "on" : "off"
+			toggleLabel = function(field) {
+				return toggleField[field] === true ? "on" : "off"
 			};
 		return [{
 			name: "dataDownloadable",
-			label: "Data download " + n("dataDownloadable"),
-			value: t.dataDownloadable
+			label: "Data download " + toggleLabel("dataDownloadable"),
+			value: toggleField.dataDownloadable
 		}, {
 			name: "embeddable",
-			label: "Chart embed " + n("embeddable"),
-			value: t.embeddable
+			label: "Chart embed " + toggleLabel("embeddable"),
+			value: toggleField.embeddable
 		}, {
 			name: "imageDownloadable",
-			label: "Image download " + n("imageDownloadable"),
-			value: t.imageDownloadable
+			label: "Image download " + toggleLabel("imageDownloadable"),
+			value: toggleField.imageDownloadable
 		}, {
 			name: "inFeeds",
-			label: "Chart appearance in feeds/search " + n("inFeeds"),
-			value: t.inFeeds
+			label: "Chart appearance in feeds/search " + toggleLabel("inFeeds"),
+			value: toggleField.inFeeds
 		}]
 	},
 	
@@ -178,7 +178,7 @@ var ChartForm = React.createClass({
 			location: "",
 			text: "Source is required.",
 			type: "error"
-		}), (o(e.tags) || e.tags.length <= 0) && n.push({
+		}), (isUndefined(e.tags) || e.tags.length <= 0) && n.push({
 			metadata: "tags",
 			location: "",
 			text: "At least one tag is required.",
@@ -217,23 +217,6 @@ var ChartForm = React.createClass({
 		}), e
 	},
 	
-	getChartOrganization: function() {
-		if ("undefined" != typeof this.props.organization) return this.props.organizationId || null;
-		if (this.props.chart && "undefined" != typeof this.props.chart.organization) return null === this.props.chart.organization ? null : this.props.chart.organization._id;
-		var e = this.getStore(AuthStore).getUserPermissions();
-		return e.organization ? e.organization._id : null
-	},
-	
-	setChartOrganization: function(e) {
-		var t, n, r = document.querySelector(".desktop svg"),
-			i = document.querySelector(".mobile svg");
-		this.props.onOrgChange && this.props.onOrgChange(e), r.classList.forEach(function(e) {
-			e.indexOf("org") > -1 && r.classList.remove(e)
-		}), i.classList.forEach(function(e) {
-			e.indexOf("org") > -1 && r.classList.remove(e)
-		}), t = e.target.value, n = "-1" === t ? "default" : t, r.classList.add("organization-" + n + "-colors"), i.classList.add("organization-" + n + "-colors")
-	},
-	
 	formatChartData: function(e) {
 		e = this.formatChartModel(e);
 		var t = {
@@ -251,7 +234,7 @@ var ChartForm = React.createClass({
 			inFeeds: this.state.inFeeds,
 			isDraft: e.isDraft
 		};
-		return this.state.isSponsor === !0 && (t.isSponsored = !0, t.sponsor = this.state.sponsor._id, t.sponsorLogo = this.state.sponsorLogo, t.sponsorImpressionTrackerUrl = this.state.sponsorImpressionTrackerUrl, t.sponsorClickTrackerUrl = this.state.sponsorClickTrackerUrl, t.sponsorThirdPartyClickTrackerUrl = this.state.sponsorThirdPartyClickTrackerUrl), t.organization = this.getChartOrganization(), {
+		return ({
 			chart: t,
 			images: {
 				app: {
@@ -265,7 +248,7 @@ var ChartForm = React.createClass({
 					mobile: e.images.mobile
 				}
 			}
-		}
+		});
 	},
 	
 	saveChart: function(e) {
@@ -273,7 +256,8 @@ var ChartForm = React.createClass({
 			n = this.formatChartData(e),
 			r = n.chart,
 			i = n.images,
-			a = p("chart", r);
+			a = validation("chart", r);
+		console.log(n);	
 		if (a.valid || e.isDraft)
 			if (!a.valid && e.isDraft) {
 				var o = l(a.errors, function(e) {

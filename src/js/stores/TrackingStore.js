@@ -6,7 +6,7 @@ var comscore = require("../utils/comscore");
 var keen = require("../utils/keen");
 var get	= require("lodash/get");
 	
-	TrackingStore = fluxible({
+	var TrackingStore = fluxible({
 		storeName: "TrackingStore",
 		
 		handlers: {
