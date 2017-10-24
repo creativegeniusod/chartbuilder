@@ -1,5 +1,1221 @@
+.navbar
+  top: 0
+  position: absolute
+  .logo
+    top: 0
+    position: absolute
+
+.icon
+  font-family: atlas-icons
+  speak: none
+  font-style: normal
+  font-weight: 400
+  font-variant: normal
+  line-height: 1
+  -webkit-font-smoothing: antialiased
+
+.icon-atlas-embed:before
+  content: "\e600"
+  font-size: 10px
+
+.icon-a:before
+  content: "\e601"
+
+.icon-arrow:before
+  content: "\e602"
+
+.icon-close:before
+  content: "\e60a"
+
+.icon-download:before
+  content: "\e603"
+
+.icon-email:before
+  content: "\e604"
+
+.icon-facebook:before
+  content: "\e605"
+
+.icon-pinterest:before
+  content: "\e606"
+
+.icon-search:before
+  content: "\e607"
+
+.icon-twitter:before
+  content: "\e608"
+
+.icon-whatsapp:before
+  content: "\e609"
+
+.chart-details .head:after, .clearfix:after, .navbar:after
+  content: ''
+  display: table
+  clear: both
+
+html > body
+  background-color: #F1F1F1
+
+body
+  font-family: AdelleSans-Regular, sans-serif
+  color: #333
+  transition: all 0.5s ease
+
+.popular h2, .sponsored-section div, h1, h2, h3, h4, h5
+  font-family: AdelleSans-Bold, "Helvetica Neue", sans-serif
+
+a:hover
+  color: #AB5787
+
+.popular h2, h1
+  font-size: 36px
+  line-height: 54px
+  padding: 20px 0
+  text-align: center
+
+h4
+  font-size: 14px
+  line-height: 25px
+  margin: 10px 0
+
+p
+  padding: 0
+  margin: 0
+
+.container
+  margin-top: 73px
+
+.navbar
+  -webkit-font-smoothing: subpixel-antialiased
+  font-smoothing: subpixel-antialiased
+  z-index: 1000
+  width: 100%
+  max-height: 37px
+  background-color: #000
+  font-size: 16px
+  color: #A1A1A1
+  line-height: 29px
+  .logo
+    z-index: 1001
+    left: 50%
+    margin-left: -38.5px
+    width: 77px
+    height: 73px
+    background-color: #333
+    .image
+      margin: 16px auto 0
+      width: 36px
+      height: 35px
+      background-image: url(../assets/a.svg)
+      background-size: cover
+  .search-container
+    float: left
+    padding: 4px 0 0 6px
+    .icon-search
+      font-size: 30px
+      line-height: 21px
+      vertical-align: middle
+  .explore-menu
+    margin-left: 5px
+    margin-right: 0
+    line-height: 37px
+    display: inline-block
+
+.logged-in .navbar .explore-menu
+  margin-right: -5px
+
+.navbar
+  .explore-menu
+    ul
+      display: none
+      padding: 13px 10px 15px
+    a
+      display: block
+      padding: 0 15px
+    &.show
+      a
+        background: #333
+      ul
+        display: block
+        position: absolute
+        left: 92px
+        list-style-type: none
+        text-transform: capitalize
+        background: #333
+        top: 20px
+        z-index: -1
+  &.logged-in .explore-menu.show ul
+    left: 91px
+
+.chart-edit .navbar
+  position: fixed
+
+.navbar .register-cta
+  width: 50%
+  position: absolute
+  right: 0
+  top: 45px
+  background: url(../assets/pinkArrow.png) no-repeat
+  height: 40vh
+  background-position: calc(100% - 35px) 0
+  display: none
+  &.show
+    display: block
+  span
+    -webkit-font-smoothing: antialiased
+    font-smoothing: antialiased
+    font-size: 15px
+    display: inline-block
+    line-height: 1.4em
+    text-align: right
+    position: absolute
+    right: 108px
+    top: 48px
+    width: 132px
+
+.sponsored-section
+  height: 60px
+  &:before
+    margin: 8px 0
+    content: ' '
+    display: block
+    height: 1px
+    width: calc(100% + 50px)
+    background-color: #000
+    position: relative
+    left: -25px
+  div
+    color: #F1A33F
+    padding: 0
+    font-size: 12px
+    display: block
+    margin-bottom: -17px
+    text-transform: uppercase
+  span
+    display: inline-block
+
+.navbar-touch, .topnav-touch
+  display: none
+
+@media screen and (min-width: 451px) and (max-width: 736px), screen and (max-width: 450px), screen and (max-width: 736px), screen and (min-width: 737px) and (max-width: 1099px)
+  .navbar
+    display: none
+  .topnav-touch
+    z-index: 1000
+    position: absolute
+    color: #BEBEBE
+    width: 99%
+    left: .5%
+    height: 45px
+    line-height: 30px
+    top: 5px
+    display: block
+    font-size: 16px
+    .register-touch
+      position: absolute
+      right: 15px
+      text-align: right
+    .login-touch
+      position: absolute
+      left: 15px
+    &.logged-in
+      .login-touch, .register-touch
+        display: none
+      .avatar-link
+        visibility: hidden
+        &.show
+          visibility: visible
+      .avatar
+        position: absolute
+        right: 5%
+        top: 20%
+    .register-cta-touch
+      width: 50%
+      position: absolute
+      right: 0
+      top: 35px
+      background: url(../assets/pinkArrow.png) no-repeat
+      height: 40vh
+      background-position: calc(100% - 38px) 0
+      display: none
+      &.show
+        display: block
+      span
+        -webkit-font-smoothing: antialiased
+        font-smoothing: antialiased
+        -moz-osx-font-smoothing: grayscale
+        font-size: 12px
+        display: inline-block
+        line-height: 1.4em
+        text-align: right
+        position: absolute
+        right: 115px
+        top: 32px
+        width: 133px
+  .navbar-touch
+    height: 44px
+    position: fixed
+    bottom: 0
+    background: #000
+    width: 100%
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: flex
+    z-index: 5
+    font-family: AdelleSans-Regular, sans-serif
+    a
+      text-transform: uppercase
+      flex: auto
+      -webkit-flex: auto
+      line-height: 48px
+      text-align: center
+      &.logo-touch
+        max-width: 44px
+    .image
+      background: url(../assets/atlas.svg) 50% no-repeat #333
+      width: 44px
+      height: 44px
+      background-size: 50% 50%
+      margin: auto
+    .explore-menu
+      flex: auto
+      -webkit-flex: auto
+      text-align: center
+      ul
+        display: none
+      &.show
+        background: #333
+        ul
+          position: fixed
+          bottom: 32px
+          right: 0
+          list-style-type: none
+          background: #333
+          padding-right: 5vw
+          padding-left: 3vw
+          display: block
+          a, li
+            text-align: right
+
+@media screen and (min-width: 451px) and (max-width: 736px)
+  .topnav-touch .register-cta-touch
+    border: 1px solid red
+    display: none
+    &.show
+      display: none
+
+@media screen and (max-width: 736px), screen and (max-width: 450px), screen and (max-width: 736px)
+  .sponsored-section
+    &:before
+      margin: 0
+      left: -11px
+    div
+      font-size: 11px
+
+@media screen and (min-width: 737px) and (max-width: 1099px)
+  .sponsored-section
+    &:before
+      margin: 0
+      left: -28px
+      width: calc(100% + 75px)
+    div
+      font-size: 11px
+
+.search
+  input[type=text]
+    outline: 0
+    border: 0
+    box-shadow: none
+  button
+    display: none
+
+.search-nav input[type=text]
+  font-size: 16px
+  line-height: 24px
+  color: #A1A1A1
+  background-color: transparent
+
+.search-index input[type=text]
+  width: 100%
+  font: 24px/36px "Adelle Sans Lt", AdelleSans-Light, sans-serif
+  padding: 15px 0
+  color: #333
+  text-align: center
+  background-color: #D8D8D8
+  border-radius: 2px
+  &::-webkit-input-placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder
+    color: #333
+
+.search-results
+  border-bottom: 2px solid #E2E2E2
+  margin: 0
+  input[type=text]
+    width: 100%
+    font-family: AdelleSans-Bold, "Helvetica Neue", sans-serif
+    font-size: 36px
+    line-height: 54px
+    color: #333
+    text-align: center
+    padding: 35px 0
+    visibility: visible
+
 #chart-form.app-error .save-button, .em-size, .hidden-svg, .submitted
   visibility: hidden
+
+.search-results input[type=text]
+  &::-webkit-input-placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder
+    color: #333
+
+@media screen and (max-width: 736px), screen and (min-width: 737px) and (max-width: 1099px)
+  .search-results input[type=text]
+    font-size: 22px
+    line-height: 32px
+    padding: 12px 0
+
+@media screen and (max-width: 736px)
+  .search-index input[type=text]
+    width: 110%
+    margin-left: -5%
+    font-family: AdelleSans-Regular, sans-serif
+    font-size: 18px
+    line-height: 24px
+    padding: 12px 0
+    color: #777
+    background-color: #D8D8D8
+    border-radius: 2px
+
+.cb-share-button
+  cursor: pointer
+  border: 1px solid #E2E2E2
+  background: 0 0
+  appearance: none
+  outline: 0
+  margin-top: 0
+  vertical-align: middle
+  font-size: 30px
+  line-height: 40px
+  height: 50px
+  width: 50px
+  padding-top: 5px
+  color: #A1A1A1
+  text-align: center
+  transition: background-color .2s linear
+  display: inline-block
+  box-sizing: border-box
+  &:focus
+    outline: 0
+  &:hover
+    background-color: #F9F9F9
+    border-color: #E2E2E2
+    color: #E2E2E2
+
+.share-buttons
+  position: absolute
+  right: 25px
+  width: 50px
+  a
+    margin-top: 10px
+    &:first-child
+      margin-top: 0
+
+@media screen and (max-width: 736px), screen and (min-width: 737px) and (max-width: 1099px)
+  .share-buttons
+    left: 0
+    top: 0
+    width: 100%
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: flex
+    -webkit-flex-direction: row
+    -ms-flex-direction: row
+    flex-direction: row
+    -webkit-flex-wrap: nowrap
+    -ms-flex-wrap: nowrap
+    flex-wrap: nowrap
+    -webkit-justify-content: center
+    -ms-justify-content: center
+    justify-content: center
+    text-align: center
+    height: 54px
+    .cb-share-button
+      flex: auto
+      -webkit-flex: auto
+      margin-top: 0
+      font-size: 33px
+      background-color: #F1F1F1
+      border: 1px solid #E2E2E2
+      border-width: 0 1px 1px 0
+    .icon-pinterest
+      display: none
+    .icon-download[href='#']
+      pointer-events: none
+      cursor: default
+      color: #E2E2E2
+  #mobile-download-overlay
+    top: 0
+    left: 0
+    position: fixed
+    width: 100%
+    height: 100%
+    background-color: #f5f5f5
+    z-index: 2
+  .mobile-overlay-content
+    top: 15%
+    position: relative
+    width: 98%
+    margin: auto
+    img
+      display: block
+      width: 100%
+    span
+      display: block
+      width: 100%
+      -webkit-font-smoothing: antialiased
+      font-smoothing: antialiased
+      -moz-osx-font-smoothing: grayscale
+      font-size: 18px
+      font-weight: 400
+      background-color: #F1F1F1
+      color: #A1A1A1
+      height: 50px
+      line-height: 50px
+      text-indent: 3.5%
+      position: fixed
+      top: 0
+      border: 1px solid #E2E2E2
+      &:after
+        float: right
+        content: '\e60a'
+        position: relative
+        font-family: atlas-icons
+        font-size: 25px
+        left: -3.5%
+    img
+      position: fixed
+      top: 25%
+
+.popular, .recent
+  background-color: #F1F1F1
+
+@media screen and (min-width: 1100px)
+  .share-buttons
+    .icon-download, .icon-whatsapp
+      display: none
+
+.popular
+  border-top: 2px solid #E2E2E2
+
+@media screen and (max-width: 736px)
+  .popular h2
+    font-size: 22px
+    line-height: 32px
+    padding-bottom: 0
+    margin-top: 0
+
+.recent
+  border-top: 1px solid #E2E2E2
+
+.popular .recent h2
+  font-size: 40px
+  line-height: 48px
+  padding: 15px 0 10px
+  text-align: center
+
+.recent
+  .popular h2, h1, h2
+    font-size: 40px
+    line-height: 48px
+    padding: 15px 0 10px
+    text-align: center
+
+@media screen and (max-width: 736px)
+  .recent
+    border-top: 1px solid #E2E2E2
+  .popular .recent h2
+    font-size: 22px
+    line-height: 32px
+    padding-bottom: 0
+    margin-top: 10px
+  .recent
+    .popular h2, h1
+      font-size: 22px
+      line-height: 32px
+      padding-bottom: 0
+      margin-top: 10px
+
+@media screen and (min-width: 737px) and (max-width: 1099px)
+  .recent
+    border-top: 1px solid #E2E2E2
+#app .cb-alert
+  .cb-alert-icon, .cb-alert-text
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+
+@supports (-ms-ime-align: auto)
+  .archive, .navbar
+    transform: rotate(0.01deg)
+
+input[type=range]
+  position: absolute
+  top: 50%
+  left: 50%
+  border: none
+  padding: 0
+  width: 330px
+  height: 44px
+  border-radius: .25em
+  transform: translate(-50%, -50%)
+  font-size: 1em
+  cursor: pointer
+  -webkit-appearance: none
+  &::-webkit-slider-runnable-track, &::-webkit-slider-thumb
+    -webkit-appearance: none
+  &::-webkit-slider-runnable-track
+    width: 330px
+    height: 9px
+    border-radius: 0
+    background: #E2E2E2
+
+.js input[type=range]::-webkit-slider-runnable-track
+  background: linear-gradient(#AB5787 1px, #AB5787, #AB5787) no-repeat #E2E2E2
+  background-size: 10% 100%
+
+input[type=range]::-moz-range-track
+  width: 330px
+  height: 9px
+  border-radius: 0
+  background: #E2E2E2
+
+.js input[type=range]::-moz-range-track
+  background: linear-gradient(#AB5787 1px, #AB5787, #AB5787) no-repeat #E2E2E2
+  background-size: 10% 100%
+
+input[type=range]
+  &::-ms-track
+    border: none
+    width: 330px
+    height: 9px
+    border-radius: 0
+    background: #E2E2E2
+    color: transparent
+  &::-ms-fill-lower
+    border-radius: 4.5px
+    background: linear-gradient(#AB5787 1px, #AB5787, #AB5787)
+  &::-webkit-slider-thumb
+    position: relative
+    margin-top: -6.5px
+    border: none
+    width: 22px
+    height: 22px
+    border-radius: 20px
+    background: #54364A
+    background-size: 100% 22px, 100% 100%
+    cursor: ew-resize
+  &::-moz-range-thumb, &::-ms-thumb
+    border: none
+    width: 22px
+    height: 22px
+    border-radius: 20px
+    background: #54364A
+    background-size: 100% 22px, 100% 100%
+    cursor: ew-resize
+  &:focus
+    outline: 0
+    box-shadow: none
+
+@-webkit-keyframes arrow-down
+  0%
+    top: 0
+
+  100%
+    top: 1em
+
+
+@keyframes arrow-down
+  0%
+    top: 0
+
+  100%
+    top: 1em
+
+
+#app .cb-alert
+  position: relative
+  font-size: 12px
+  .cb-alert-icon
+    font-smoothing: antialiased
+    font-family: atlas-icons
+    position: absolute
+    top: 0
+    left: 0
+    border-right: 1px solid rgba(0, 0, 0, 0.1)
+    width: 23px
+    height: 100%
+    &:before
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      position: absolute
+
+.hero .home-hero-text
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  position: absolute
+
+#app .cb-alert
+  .cb-alert-icon:before
+    font-size: 12px
+    color: #FFF
+  .cb-alert-text
+    font-smoothing: antialiased
+    padding-left: 29px
+    font-family: AdelleSans-Bold, "Helvetica Neue", sans-serif
+    line-height: 15px
+  &.success .cb-alert-text
+    background-color: #1e866c
+  &.error .cb-alert-icon:before
+    content: "\e903"
+  &.warning .cb-alert-icon:before
+    content: "\e902"
+
+.hero
+  background-image: url(../assets/background-tile.png)
+  background-color: #000
+  width: 100%
+  height: 100vh
+  overflow: hidden
+  background-size: contain
+  background-position: center top
+  background-repeat: repeat-x
+  display: relative
+  .home-hero-text
+    text-align: center
+    width: 100%
+    .logo
+      width: 244px
+      height: 45px
+      margin: auto
+      background-repeat: no-repeat
+      background-size: auto auto
+      background-image: url(../assets/atlas-logo.svg)
+  .tagline
+    -webkit-font-smoothing: antialiased
+    font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    width: 100%
+    text-align: center
+    color: #777
+    font: 24px/32px AdelleSans-Regular, sans-serif
+    font-weight: 400
+    margin: 25px 0
+    line-height: 22px
+    a
+      color: #B8B8B8
+      &:hover
+        color: #AB5787
+  .down-arrow-wrap
+    position: absolute
+    bottom: -82vh
+    left: 49%
+    width: 30px
+    height: 30px
+    text-align: center
+    margin: auto
+    -webkit-animation: arrow-down linear 1.3s infinite alternate
+    animation: arrow-down linear 1.3s infinite alternate
+    .down-arrow
+      width: 26px
+      height: 26px
+      border-right: 2px solid #BEBEBE
+      border-bottom: 2px solid #BEBEBE
+      -webkit-transform: rotate(45deg)
+      transform: rotate(45deg)
+      opacity: 0.5
+  .search-container
+    margin: 0 auto
+    width: 65%
+  .us-hp
+    width: 100%
+    text-align: center
+    padding: 20px 0
+    position: absolute
+    bottom: 10%
+    color: #FFF
+    span
+      display: block
+      color: #777
+      font-size: 14px
+      line-height: 20px
+      margin-bottom: 10px
+    img
+      width: 180px
+@media screen and (max-width: 450px), screen and (min-width: 451px) and (max-width: 736px), screen and (min-width: 737px) and (max-width: 1099px)
+  .hero
+    height: 110%
+    height: -webkit-calc(100% + 120px)
+    height: calc(100% + 120px)
+    .home-hero-text
+      height: 100%
+      .tagline
+        font-size: 16px
+        line-height: 24px
+        width: 80vw
+        margin: 0 auto 25px
+        color: #777
+        font-family: AdelleSans-Regular, sans-serif
+      .logo
+        margin: 29vh auto 15px
+        background-size: 160px auto
+        background-position: center
+      .search-container
+        width: 80vw
+        .form-control
+          padding: 8px 0
+          font-size: 16px
+    .down-arrow
+      display: none
+
+@media screen and (max-width: 450px), screen and (min-width: 737px) and (max-width: 1099px)
+  .hero
+    height: calc(100vh - 44px)
+
+@media screen and (min-width: 737px) and (max-width: 1099px)
+  .hero .logo
+    margin: 45% auto 15px
+
+@media screen and (max-width: 736px)
+  #index
+    height: calc(100vh - 44px)
+  .hero
+    height: 100%
+    .tagline
+      width: 80vw
+      margin: 0 auto 25px
+      color: #777
+      font: (16px / 20px) AdelleSans-Regular, sans-serif
+    .logo
+      margin: 35vh auto 5px
+      width: 200px
+      background-size: 100% auto
+    .down-arrow
+      display: none
+    .search-container
+      width: 80vw
+
+.chart-details .head
+  .sponsored .sponsor-link h3, .user .user-link h3 .user-name
+    font-family: AdelleSans-Bold, "Helvetica Neue", sans-serif
+    -moz-osx-font-smoothing: grayscale
+
+@media (max-height: 700px) and (min-width: 1100px)
+  .hero
+    height: 120%
+    height: -webkit-calc(100vh + 50px)
+    height: calc(100vh + 50px)
+  #atlas-home-page-sponsorship-placement
+    bottom: 20px
+  .down-arrow
+    display: none
+
+@media screen and (max-width: 736px) and (max-height: 359px)
+  .hero .us-hp
+    display: none
+
+.results-head
+  padding-top: 73px
+  background: #fff
+
+.results
+  background-color: #F1F1F1
+  .message
+    font-size: 16px
+    color: #A1A1A1
+    text-align: center
+    margin-top: 75px
+
+@media screen and (max-width: 736px), screen and (min-width: 737px) and (max-width: 1099px)
+  .results-head
+    padding-top: 0
+    position: relative
+
+.chart-page
+  margin-top: -27px
+  padding-top: 100px
+  background-color: #F9F9F9
+  .chart
+    width: 930px
+    margin: 0 auto
+    overflow: hidden
+  .chart-sponsor
+    text-transform: uppercase
+    color: #F1A33F
+    text-align: center
+    font-size: 14px
+    line-height: 20px
+    margin-bottom: 0
+    margin-top: 30px
+    &.hidden
+      display: none
+    &:not(.hidden) + .chart-title
+      margin-top: 0
+  .chart-title
+    padding: 20px 0
+    font-size: 40px
+    line-height: 48px
+    width: 930px
+    margin: 0.67em auto 0
+    .draft-prefix
+      color: #A1A1A1
+      margin-right: 5px
+  .chart-buttons
+    width: 930px
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: flex
+    -webkit-flex-direction: row
+    -ms-flex-direction: row
+    -webkit-flex-wrap: nowrap
+    -ms-flex-wrap: nowrap
+    -webkit-justify-content: center
+    -ms-justify-content: center
+    flex-direction: row
+    flex-wrap: nowrap
+    justify-content: center
+    margin: 42px auto 50px
+    a, button
+      -webkit-font-smoothing: antialiased
+      font-smoothing: antialiased
+      -moz-osx-font-smoothing: grayscale
+      -webkit-flex-grow: 1
+      -ms-flex-grow: 1
+      flex-grow: 1
+      box-sizing: border-box
+      width: 225px
+      margin-left: 10px
+      text-rendering: geometricPrecision
+      padding: 1px 10px 0
+    a:first-child, button:first-child
+      margin-left: 0
+    a
+      display: inline-block
+      vertical-align: middle
+      text-align: center
+      line-height: 50px
+    .delete-draft
+      color: #e55151
+      &:hover
+        background-color: #e55151
+        color: #FFF
+  .embed-text
+    width: 930px
+    margin: auto
+    &:not(.hidden)
+      margin-top: -50px
+      margin-bottom: 50px
+    .cb-text-input input
+      width: 100%
+      color: #333
+      padding: 0 10px
+      line-height: 55px
+      margin-top: 10px
+
+.chart-details
+  width: 620px
+  margin: 0 auto 65px
+  .head
+    width: 100%
+    margin: 0 0 15px
+    .meta
+      float: right
+    .sponsored .sponsor-link
+      h3
+        margin: 0 10px 0 0
+        -webkit-font-smoothing: antialiased
+        font-smoothing: antialiased
+        color: #000
+        float: left
+        font-size: 18px
+        line-height: 35px
+      img
+        height: 35px
+        width: 35px
+        border-radius: 50%
+        float: left
+    .user
+      font-size: 18px
+      line-height: 22px
+      .user-link
+        .avatar
+          margin-right: 10px
+          line-height: 35px
+          margin-top: -6px
+        &:hover
+          .user-name
+            color: #AB5787
+          .avatar
+            opacity: 0.5
+        h3
+          font-size: inherit
+          line-height: inherit
+          display: inline
+          font-weight: 400
+          margin: 0
+          .user-name
+            margin-right: .15ch
+            margin-left: 4px
+            -webkit-font-smoothing: antialiased
+            font-smoothing: antialiased
+            color: #000
+      .user-title
+        font-family: AdelleSans-Regular, sans-serif
+        -webkit-font-smoothing: antialiased
+        font-smoothing: antialiased
+        -moz-osx-font-smoothing: grayscale
+        color: #BEBEBE
+        margin-right: 5px
+  .meta, .tags div
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+  .appears-in.condensed div:nth-of-type(n+4), .meta-touch
+    display: none
+  .head .user
+    .user-title span
+      color: #BEBEBE
+    a
+      margin-left: -6px
+    .user-org
+      font-size: 18px
+      line-height: 35px
+      font-family: AdelleSans-Regular, sans-serif
+      color: #AB5787
+      &:hover
+        color: #BEBEBE
+  .meta
+    font-smoothing: antialiased
+    color: #BEBEBE
+    font-size: 18px
+    line-height: 24px
+    padding-top: 6px
+    max-width: 360px
+  .description
+    font: (18px / 30px) "PT Serif", serif
+
+@media screen and (max-width: 736px)
+  .chart-details .head .sponsored .sponsor-link h3
+    font-size: 14px
+
+@media screen and (max-width: 736px)
+  .chart-details .head .user
+    line-height: 18px
+
+@media screen and (max-width: 736px)
+  .chart-details .head .user
+    .user-link h3
+      line-height: 100%
+      .user-name
+        font-size: 14px
+    .user-title
+      display: inline
+      font-size: 14px
+      margin-right: 0
+      + a
+        margin-left: 0
+
+@media screen and (max-width: 736px)
+  .chart-details .head .user .user-org
+    font-size: 14px
+    line-height: inherit
+
+#app
+  .d4
+    .axis .tick, .concealer-label, .margins .label
+      font-family: "Adelle Sans Lt", AdelleSans-Light, sans-serif
+  .svg-label-text, .svg-text, svg.renderer-svg
+    font-family: "Adelle Sans Lt", AdelleSans-Light, sans-serif
+
+.chart-details
+  .description
+    p a
+      color: #AB5787
+      &:hover
+        color: #BEBEBE
+    + .meta
+      margin-top: 1em
+      padding-top: 6px
+  .tags
+    margin-top: 30px
+    padding-top: 23px
+    border-top: 1px solid #E2E2E2
+    h4
+      font-size: 13px
+      text-transform: uppercase
+    div
+      font-smoothing: antialiased
+      font-size: 18px
+      line-height: 22px
+      color: #BEBEBE
+  .appears-in
+    border-top: 1px solid #E2E2E2
+    margin: 30px auto
+    padding-top: 20px
+    div
+      margin-bottom: 20px
+      &:last-of-type
+        min-height: 0
+    h3
+      text-transform: uppercase
+      margin-bottom: 17px
+    img
+      width: 16px
+      margin-right: 10px
+      float: left
+    .hostname, .see-more
+      -webkit-font-smoothing: antialiased
+      font-smoothing: antialiased
+      -moz-osx-font-smoothing: grayscale
+      position: relative
+      top: -4px
+      font-size: 18px
+      line-height: 24px
+    a
+      -webkit-font-smoothing: antialiased
+      font-smoothing: antialiased
+      -moz-osx-font-smoothing: grayscale
+      position: relative
+      top: -4px
+      font-size: 18px
+      line-height: 24px
+      color: #AB5787
+      &:hover
+        color: #BEBEBE
+    .hostname
+      margin-left: 5px
+      color: #BEBEBE
+    .see-more
+      color: #BEBEBE
+      display: none
+      &:hover
+        cursor: pointer
+        color: #AB5787
+    &.condensed .see-more
+      display: inline
+@media screen and (min-width: 1100px)
+  .chart-details .description
+    margin-bottom: 18px
+    + .meta
+      float: right
+      margin-top: 0
+
+#app .d4
+  .axis .tick rect, .concealer-label rect
+    fill: #F9F9F9
+  .xAxislabel
+    transform: translate(0, 10px)
+
+@media screen and (min-width: 737px) and (max-width: 1099px)
+  .chart-page
+    padding-top: 80px
+    .chart
+      width: 92%
+      margin: 0 auto
+    .chart-title
+      width: 92%
+    .chart-buttons
+      display: none
+      .cb-button
+        flex: auto
+  .chart-details
+    width: 80%
+    margin: 40px auto 45px
+    .head .meta
+      line-height: 22px
+    .description
+      font: (18px / 28px) "PT Serif", serif
+      + .meta
+        float: right
+        + .meta
+          margin-top: 1em
+    .tags
+      margin-top: 30px
+      padding-top: 20px
+
+@media screen and (max-width: 736px)
+  .chart-details .meta, .chart-page .chart-buttons
+    display: none
+  .chart-details
+    .meta-touch, .tags div
+      -moz-osx-font-smoothing: grayscale
+      text-rendering: geometricPrecision
+  .chart-page
+    margin-top: -50px
+    .chart
+      width: 92vw
+    .chart-title
+      font-size: 22px
+      line-height: 30px
+      padding-bottom: 15px
+      width: 92vw
+  .chart svg
+    max-width: 96vw
+    min-height: 220px
+  .chart-details
+    width: 92vw
+    margin: 30px 4vw 35px
+    .description
+      font: 14px/22px AdelleSans-Regular, sans-serif
+      margin-bottom: 1em
+    .head
+      margin-bottom: 10px
+    .meta-touch
+      -webkit-font-smoothing: antialiased
+      font-smoothing: antialiased
+      display: block
+      color: #BEBEBE
+      font-size: 14px
+      line-height: 22px
+    .tags
+      border-top: 0
+      padding-top: 5px
+      div
+        -webkit-font-smoothing: antialiased
+        font-smoothing: antialiased
+        font-size: 14px
+        line-height: 20px
+      h4
+        font-size: 14px
+        line-height: 26px
+        margin: 30px auto 5px
+      &:before
+        width: 92vw
+        display: block
+        height: 1px
+        background-color: #E2E2E2
+        position: relative
+        content: ""
+
+@supports (-ms-ime-align: auto)
+  .chart-page
+    transform: rotate(0.01deg)
+
+@keyframes spinner
+  0%
+    transform: rotate(0)
+
+  100%
+    transform: rotate(360deg)
+
+
+@-webkit-keyframes spinner
+  0%
+    transform: rotate(0)
+
+  100%
+    transform: rotate(360deg)
+
+
+.chart-edit
+  background-color: #F9F9F9
 
 #chart-form
   .label-reset
@@ -10,7 +1226,7 @@
       opacity: 0.1
     &.chart-publish::before, &.draft-save::before
       content: ' '
-      background-image: url(/images/spinner.svg)
+      background-image: url(../assets/spinner.svg)
       background-repeat: no-repeat
       width: 30px
       height: 30px
@@ -231,6 +1447,7 @@ span.step-number
         font-size: 1.4em
         margin: 5px 0
         padding: 0
+        width: calc(100% - 27px)
         &::-webkit-input-placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder
           color: #a1a1a1
         textarea
@@ -259,7 +1476,7 @@ span.step-number
         width: calc(100% - 2px)
         -webkit-appearance: none
         -moz-appearance: none
-        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAuCAYAAABJcBuEAAAC1ElEQVRYR+2XT2gTQRTG56UqVLdaokIXDUF715pu8VQ8iYcEtteA1VO6G3tN8WQJ4kXdgjd3m3rwz2FOpZCNeNAsHswhwUg92nqRUqvYNmJQoZonIwlETbIz3dWCZK/75n2/+WbezBsgO/zBDuuTLkDXgf/DAUTcs7KyMh4Khe6IVpUvDjiOc3NmZiaVzWYPA8AHEQjPAJVK5biqqq+r1SpJJBLPNE0bBQDkhfAEgIgBwzBeUUoHG4K2bUdlWX74TwBKpZKm67rZLDY8PLxlWVY/AHzmgdi2A4gYjMfj60tLS3/oTE9PP1BVdfyvASAiWJb1NJPJjLYSkSSJ5HK5k5IkvXSD2JYDq6ur5+Lx+CO28dp9sVhsLZ1OHwWA750ghAEQsXdiYuJjuVze7TY7y7IuKYpy21eAfD5/d2pq6oKbOPsvyzLJZrP7AeBTu3ghB6rV6oloNLrYyfrfhRKJhKnretIzACLuMgzjLaX0EM/sm2MWFhYOhkKhjVbjuB0oFArBycnJUz09PfsQUQKAPkTsI4QcQMT+QCDQX6vVmN297G5gYgDwlRCyoSjKdcuyFj0BiM6aN57bAd6EonFdgK4D3A4Ui8WryWTyissm2yKEsNJjJ986IWSNEPImEok8zmQy1FMZ1g+id5TSoOhOn5+fV8Lh8HNPAGzw5ubm0NjY2AvBo/iJpmln27Vp3EvQoHcc534qlTrP48LAwACxbbtjoyoMIHIdm6Z5eWRk5Iav1zFLxtmQvE+n00cA4JvvAKwlM03TmZubO9OhJRuSJKnlBdQ8RngJGoNdmtJ7qqpe5Nkn2wZgyVu15ZFI5Mvs7GywfhW7MngCqD9MlimlxxpKtm2flmW56KpcD/AEwHJUKpVBVVWX60+za7quu52Wv7B5BmDZHMe5ZRjGXtu2dQCo8c7+Z9ckEtwullWFyIPUlyrwA9w3B7zA+LIEXYCuA14c+AHIJBg+j0MkiAAAAABJRU5ErkJggg==") no-repeat
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAuCAYAAABJcBuEAAAC1ElEQVRYR+2XT2gTQRTG56UqVLdaokIXDUF715pu8VQ8iYcEtteA1VO6G3tN8WQJ4kXdgjd3m3rwz2FOpZCNeNAsHswhwUg92nqRUqvYNmJQoZonIwlETbIz3dWCZK/75n2/+WbezBsgO/zBDuuTLkDXgf/DAUTcs7KyMh4Khe6IVpUvDjiOc3NmZiaVzWYPA8AHEQjPAJVK5biqqq+r1SpJJBLPNE0bBQDkhfAEgIgBwzBeUUoHG4K2bUdlWX74TwBKpZKm67rZLDY8PLxlWVY/AHzmgdi2A4gYjMfj60tLS3/oTE9PP1BVdfyvASAiWJb1NJPJjLYSkSSJ5HK5k5IkvXSD2JYDq6ur5+Lx+CO28dp9sVhsLZ1OHwWA750ghAEQsXdiYuJjuVze7TY7y7IuKYpy21eAfD5/d2pq6oKbOPsvyzLJZrP7AeBTu3ghB6rV6oloNLrYyfrfhRKJhKnretIzACLuMgzjLaX0EM/sm2MWFhYOhkKhjVbjuB0oFArBycnJUz09PfsQUQKAPkTsI4QcQMT+QCDQX6vVmN297G5gYgDwlRCyoSjKdcuyFj0BiM6aN57bAd6EonFdgK4D3A4Ui8WryWTyissm2yKEsNJjJ986IWSNEPImEok8zmQy1FMZ1g+id5TSoOhOn5+fV8Lh8HNPAGzw5ubm0NjY2AvBo/iJpmln27Vp3EvQoHcc534qlTrP48LAwACxbbtjoyoMIHIdm6Z5eWRk5Iav1zFLxtmQvE+n00cA4JvvAKwlM03TmZubO9OhJRuSJKnlBdQ8RngJGoNdmtJ7qqpe5Nkn2wZgyVu15ZFI5Mvs7GywfhW7MngCqD9MlimlxxpKtm2flmW56KpcD/AEwHJUKpVBVVWX60+za7quu52Wv7B5BmDZHMe5ZRjGXtu2dQCo8c7+Z9ckEtwullWFyIPUlyrwA9w3B7zA+LIEXYCuA14c+AHIJBg+j0MkiAAAAABJRU5ErkJggg==') no-repeat
         background-size: auto 21px
         background-position: calc(100% - 18px) center
         &:disabled
@@ -551,6 +1768,7 @@ span.step-number
       display: inline-flex
       justify-content: center
       width: calc(50% - 17px)
+      top: -7px
       white-space: nowrap
   .advanced-options.hidden + .export-button-wrapper .link-delete
     display: none
@@ -581,7 +1799,6 @@ span.step-number
     + .export-button-wrapper .link-delete
       position: relative
       top: 12px
-
 .toggle-advanced
   color: #AB5787
   font-size: 16px
@@ -596,7 +1813,7 @@ span.step-number
   top: auto
   margin-top: -3em !important
 
-.chartbuilder-editor > .editor-options:nth-last-of-type(3) div input
+.atlas-sponsor-data input, .chartbuilder-editor > .editor-options:nth-last-of-type(3) div input
   width: 100%
 
 .toggle-advanced:hover
@@ -610,6 +1827,23 @@ span.step-number
     font-size: 16px
     line-height: 23px
     color: #e55151
+
+.link-delete
+  display: block
+  color: #e55151
+  height: 53px
+  line-height: 53px
+  text-align: center
+  font-size: 16px
+  margin-bottom: 20px
+  cursor: pointer
+  -webkit-flex-grow: 1
+  -ms-flex-grow: 1
+  flex-grow: 1
+  border: 1px solid #E2E2E2
+  &:hover
+    color: #FFF
+    background-color: #e55151
 
 @media screen and (max-width: 1100px)
   #chart-form .xy-editor h2 + .cb-button.label-reset
@@ -627,6 +1861,11 @@ span.step-number
   margin-right: auto
   margin-top: 4em
   position: relative
+  .phone-wrap
+    transform: scale(1)
+    transform-origin: top
+    height: 881px
+    background-image: url(/images/iphone-6.svg)
   .phone-frame
     overflow-y: scroll
     position: relative
@@ -739,14 +1978,13 @@ span.step-number
       margin-left: 5px
 
 
-#chart-form
-  .scale-options
-    select::-ms-expand
-      display: none
-    .labelled-dropdown label
-      -ms-transform: translateY(-40px) translateX(-36px)
-    .cb-dropdown::before
-      -ms-transform: translateX(35vw)
+#chart-form .scale-options
+  select::-ms-expand
+    display: none
+  .labelled-dropdown label
+    -ms-transform: translateY(-40px) translateX(-36px)
+  .cb-dropdown::before
+    -ms-transform: translateX(35vw)
 
 @supports (-ms-ime-align: auto)
   #chart-form
@@ -757,7 +1995,7 @@ span.step-number
   .cb-dropdown::before
     transform: translateX(35vw)
 
-_::-webkit-full-page-media
+#chart-form .scale-options-date div:not(.labelled-dropdown), _::-webkit-full-page-media
   padding-left: 4px
 
 #chart-form .scale-options-date .cb-dropdown-select, _::-webkit-full-page-media
@@ -772,6 +2010,10 @@ _::-webkit-full-page-media
 
 .editor-options .scale-options h4 + .label-reset, .new-chart-support-link a
   color: #AB5787
+
+.new-chart-support-link
+  margin-top: 70px
+  border-top: 1px solid #E2E2E2
 
 .editor-options
   h2
@@ -816,27 +2058,6 @@ _::-webkit-full-page-media
     .scale-option-title + h4
       display: none
 
-#chart-form .mobile-overrides .scale-option-title
-  margin-bottom: 4px
-
-span.step-number
-  background-color: #333
-  border-radius: 100px
-  color: #fff
-  width: 1.5em
-  height: 1.5em
-  display: inline-block
-  text-align: center
-  margin-right: 0.25em
-
-.editor-options
-  font-family: AdelleSans-Regular, 'Helvetica Neue', Arial, Helvetica, sans-serif
-  margin: 30px 0
-  display: block
-  width: 100%
-  .editor-option
-    margin-bottom: 12px
-
 .downarrow
   width: 28px
   height: 26px
@@ -865,11 +2086,197 @@ span.step-number
   margin-top: 31px
   margin-left: -38px
 
-.chartgrid-mobile 
-  h4 
-    margin-top: 20px
+.chartgrid-mobile h4
+  margin-top: 20px
 
-.requiredCallToAction
-  color: #e55151
-  margin: 15px 0 0 0
+#chart-form .mobile-overrides .scale-option-title
+  margin-bottom: 4px
 
+.not-found
+  height: 100vh
+  width: 100vw
+  background-position: center top
+  background-repeat: none
+  background-size: cover
+  background-image: url(../assets/404.svg)
+
+@media screen and (max-width: 600px)
+  .not-found
+    background-size: auto 100%
+    background-position: 48.5% 0
+
+span.step-number
+  background-color: #333
+  border-radius: 100px
+  color: #fff
+  width: 1.5em
+  height: 1.5em
+  display: inline-block
+  text-align: center
+  margin-right: 0.25em
+
+.editor-options
+  font-family: AdelleSans-Regular, 'Helvetica Neue', Arial, Helvetica, sans-serif
+  margin: 30px 0
+  display: block
+  width: 100%
+  .editor-option
+    margin-bottom: 12px
+
+.data-input
+  font-size: 1em
+  position: relative
+  margin: 0 0 10px
+  h3
+    margin: 0
+  textarea
+    font-family: Consolas, Monaco, monospace
+    height: 12em
+  .file-drop
+    font-family: AdelleSans-Regular, "Helvetica Neue", Arial, Helvetica, sans-serif
+
+.editor-label
+  font-family: AdelleSans-Regular, "Helvetica Neue", Arial, Helvetica, sans-serif
+
+.data-input
+  input[type=file]
+    pointer-events: none
+    height: 12em
+    position: relative
+    opacity: 1
+    z-index: -1
+  .error-display
+    margin: 0 0 10px
+  .file-drop
+    pointer-events: none
+    height: 12em
+    position: absolute
+    top: 0
+    left: 0
+    z-index: -2
+    background-color: #f1f1f1
+    width: 100%
+    text-align: center
+    p
+      font-size: 2em
+      margin-top: 2em
+  &.dropping
+    input[type=file]
+      pointer-events: all
+      z-index: 1
+    .file-drop
+      z-index: 2
+
+.series-control
+  margin: 0 0 10px
+  &.inline
+    display: inline-block
+    margin-right: 10px
+    h3
+      line-height: 2em
+      margin: 0
+  .section
+    display: inline-block
+    vertical-align: middle
+  .axis-color
+    width: 21%
+    display: -webkit-box
+    display: -moz-box
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: flex
+    -webkit-flex-direction: column
+    -ms-flex-direction: column
+    flex-direction: column
+    -webkit-transform: translateX(4%)
+    transform: translateX(4%)
+    label
+      color: #bebebe
+      font-size: 16px
+      line-height: 24px
+
+.auth-container
+  float: right
+  line-height: 21px
+  min-width: 95px
+  .auth-user, > a
+    display: inline-block
+    padding: 0 15px
+  .not-auth a
+    margin: 9px 10px 0
+    display: inline-block
+  .plus
+    float: right
+    display: block
+    padding: 0 0 8px
+    &:hover::before
+      color: #69435C
+    &::before
+      content: '\e624'
+      font: 32px/21px qz-icons
+      background-color: #FFF
+      border-radius: 50px
+      padding: 0
+      height: 22px
+      width: 22px
+      color: #AB5787
+      display: block
+      float: right
+      margin: 8px 10px 0 5px
+      text-indent: -4px
+    &.show
+      background-color: #333
+
+.auth-dropdown, .auth-dropdown-container.show .auth-user
+  background-color: #333
+
+.auth-container
+  .plus.show + .org-dropdown
+    display: block
+  .org-dropdown
+    display: none
+    width: auto
+    white-space: nowrap
+    background-color: #333
+    position: absolute
+    right: 0
+    padding: 8px
+    top: 36px
+    text-align: right
+    a
+      display: block
+      padding: 10px
+
+.auth-dropdown
+  display: none
+  position: absolute
+  top: 37px
+  right: 0
+  margin: 0
+  padding: 10px 0
+  min-width: 150px
+  list-style: none
+  > li
+    padding: 10px 25px
+    list-style-position: inside
+
+.auth-user
+  height: 100%
+  .avatar
+    margin: 6px 0
+    width: 25px
+    height: 25px
+    .avatar-initials
+      font-size: 11px
+      line-height: 25px
+
+.auth-dropdown-container
+  display: inline-block
+  height: 37px
+  max-height: 37px
+  &.show
+    .auth-user + .auth-dropdown
+      right: 0
+    .auth-dropdown
+      display: block
+      right: 37px

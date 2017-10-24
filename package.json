@@ -70,6 +70,7 @@
     "sizeof": "^1.0.0",
     "sugar-date": "^1.5.1",
     "superagent": "^3.6.0",
+    "svg-to-png": "^3.1.2",
     "svg2img": "0.2.3",
     "swig": "^1.4.2",
     "underscore": "^1.8.3",

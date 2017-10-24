@@ -58,7 +58,7 @@ gulp.task("stylus:core", ["clean-dist"], function () {
 gulp.task("browserify:dev", function () {
 
 	var props = {
-		entries: [config.paths.src.js + "/client.js"],
+		entries: [config.paths.src.js + "/index.js"],
 		debug: true,
 		cache: {},
 		packageCache: {},
@@ -103,7 +103,7 @@ gulp.task("browserify:test", function () {
 });
 
 gulp.task("browserify:prod", function () {
-	var bundler = browserify(config.paths.src.js + "/client.js")
+	var bundler = browserify(config.paths.src.js + "/index.js")
 			.transform("babelify", {presets: ["react"]})
 			.transform(envify({ NODE_ENV: "prod" }));
 
@@ -176,12 +176,12 @@ gulp.task("browser-sync-test", ["test-page-setup"], function () {
 gulp.task("watch", [
 	"browserify:dev",
 	"stylus",
-	//"copy-htdocs",
+	"copy-htdocs",
 	"copy-fonts",
 	"copy-assets"
 ], function (done) {
 	gulp.watch(config.paths.src.styl + "/**", ["stylus"]);
-	//gulp.watch(config.paths.src.htdocs + "/**", ["copy-htdocs"]);
+	gulp.watch(config.paths.src.htdocs + "/**", ["copy-htdocs"]);
 	gulp.watch("./node_modules/d3/d3.js", ["browserify:dev"]);
 	done();
 });
@@ -191,7 +191,7 @@ gulp.task("_build", [
 	"browserify:prod",
 	"stylus",
 	"stylus:core",
-	//"copy-htdocs",
+	"copy-htdocs",
 	"copy-fonts",
 	"copy-assets"
 ]);
@@ -199,13 +199,13 @@ gulp.task("_build", [
 gulp.task("test-page-setup", [
 	"browserify:test",
 	"stylus",
-	//"copy-test-htdocs",
+	"copy-test-htdocs",
 	"copy-fonts",
 	"copy-assets"
 ], function(done) {
 	gulp.watch("test/**", ["browserify:test"]);
 	gulp.watch(config.paths.src.js + "/**", ["browserify:test"]);
-	//gulp.watch("test/test-page/index.html", ["copy-test-htdocs"]);
+	gulp.watch("test/test-page/index.html", ["copy-test-htdocs"]);
 	gulp.watch(config.paths.src.styl + "/**", ["stylus"]);
 	gulp.watch("./node_modules/d3/d3.js", ["browserify:dev"]);
 	done();
@@ -242,8 +242,8 @@ gulp.task("browserify:development", function () {
   
 gulp.task("serve", [
 	"browserify:development",
-	"stylus"
-	//"copy-htdocs"
+	"stylus",
+	"copy-htdocs"
 ], function () {
 	
 	var server = gls.new('start.js');
@@ -258,6 +258,6 @@ gulp.task("serve", [
 	
 	gulp.watch(config.paths.src.js + "/**", ["browserify:development"]);
 	gulp.watch(config.paths.src.styl + "/**", ["stylus"]);
-	//gulp.watch(config.paths.src.htdocs + "/**", ["copy-htdocs"]);
+	gulp.watch(config.paths.src.htdocs + "/**", ["copy-htdocs"]);
 });
 

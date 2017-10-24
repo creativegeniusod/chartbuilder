@@ -1,14 +1,28 @@
+var ReactRouter = require('react-router');
+var browserHistory = ReactRouter.browserHistory;
+
 function r(e, t) {
 	var n = t.chartId;
 	return e.dispatch("SEND_IMAGES_START"), e.agent.post("/api/charts/saveImages").send(t).promise().then(function(r) {
-		e.dispatch("SEND_IMAGES", r.body), e.agent.get("/api/auth/draftCount").promise().then(function(i) {
+			var a, o;
+			
+			/*return e.dispatch("SEND_IMAGES", r.body),
+				a = "chart", t.routerContext.history.pushState(a, {
+					id: n
+				});*/
+			return e.dispatch("SEND_IMAGES", r.body), o = browserHistory.createPath("edit", {
+				id: n
+			}), r.body.chart.isDraft ? void(window.location.href = o) : (a = "charts", browserHistory.push('/charts/'+n));
+		
+		/*e.dispatch("SEND_IMAGES", r.body), e.agent.get("/api/auth/draftCount").promise().then(function(i) {
 			var a, o;
 			return e.dispatch("RECEIVE_USER_DRAFT_COUNT", i), o = t.routerContext.router.makePath("edit", {
 				id: n
 			}), r.body.chart.isDraft ? void(window.location.href = o) : (a = "chart", t.routerContext.router.transitionTo(a, {
 				id: n
 			}))
-		})
+		})*/
+		
 	}, function(t) {
 		e.dispatch("ERROR_SEND_IMAGES", t)
 	})
@@ -20,8 +34,6 @@ module.exports = {
 		return e.dispatch("CREATE_CHART_START"), e.agent.post("/api/charts").send({
 			chart: t.chart
 		}).promise().done(function(n) {
-			console.log('Harish');
-			console.log(n.body);
 			e.dispatch("CREATE_CHART", n.body), e.executeAction(r, {
 				chartId: n.body.chart._id,
 				images: t.images,

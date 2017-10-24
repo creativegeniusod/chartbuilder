@@ -31,14 +31,8 @@ if(d) {
 
 var ChartForm = React.createClass({
 
-	mixins: [ReactRouter.Navigation,FluxibleMixin],
+	mixins: [FluxibleMixin],
 	
-	/*statics: {
-		storeListeners: {
-			onAuthStoreChange: [AuthStore]
-		}
-    },*/
-    
     getInitialState: function() {
 		var chartId = this.props.chart && this.props.chart._id;
 		return {
@@ -294,7 +288,7 @@ var ChartForm = React.createClass({
 	
 	render: function() {
 		var e, t, n, i = isUndefined(this.state.validation) || !this.state.validation.errors ? [] : this.state.validation.errors;
-
+		
 		var u = React.createElement(ChartStyles, {
 				organization: {},
 				embed: !1,

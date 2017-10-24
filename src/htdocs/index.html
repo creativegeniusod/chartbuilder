@@ -5,15 +5,29 @@
 	<meta name="viewport" content="width=device-width" />
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 	<title>Chartbuilder 3.0.5</title>
-	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="/css/main.css">
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 </head>
 <body>
-	<div class="header">
+	<!--<div class="header">
 		<h1>Chartbuilder 3.0.5</h1>
+	</div>-->
+	<nav class="navbar  logged-in">
+	   <div class="search-container" ><a class="" href="/search" >
+		   <i class="icon icon-search"></i><span>Search</span></a>
+		</div>
+	   <div class="logo">
+		  <a title="Atlas" class="" href="/">
+			 <div class="image"></div>
+		  </a>
+	   </div>
+	   <div class="auth-container">
+		  <a class="plus" href="/charts/new"></a>
+	   </div>
+	</nav>
+	<div id="app">
+	
 	</div>
-	<div id="app">{{html|safe}}</div>
-	<script>{{state|safe}}</script>
-	<script src="js/main.js"></script>
+	<script src="/js/main.js"></script>
 </body>
 </html>

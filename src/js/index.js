@@ -9,6 +9,7 @@ var ReactDOM = require("react-dom");
 var ChartbuilderLocalStorageAPI = require("./util/ChartbuilderLocalStorageAPI");
 var Chartbuilder = require("./components/Chartbuilder.jsx");
 var ChartForm = require("./components/ChartForm.jsx");
+var Home = require("./components/Home");
 
 //var container = document.querySelector(".chartbuilder-container");
 var container = document.getElementById('app');
@@ -19,8 +20,8 @@ document.addEventListener("DOMContentLoaded", function() {
 	ChartbuilderLocalStorageAPI.defaultChart();
 	// Render parent chartbuilder component
 	ReactDOM.render(
-	    <div id="chart-form" className="container">
-			<ChartForm
+	    <div>
+			<Home
 			/>
 		</div>,
 	container );
